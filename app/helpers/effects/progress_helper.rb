@@ -1,0 +1,2 @@
+module Effects::ProgressHelper
+end
