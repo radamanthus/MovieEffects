@@ -1,0 +1,21 @@
+<div class="ui container">
+  <form class="ui form" action="/effects/processing" method="get">
+    <div class="field">
+      <label>Start Text</label>
+      <input type="text" name="start_text" placeholder="Are you sure you want to download the virus?">
+    </div>
+    <div class="field">
+      <label>Start Button Label</label>
+      <input type="text" name="start_button_label" placeholder="Proceed">
+    </div>
+    <div class="field">
+      <label>Processing Text</label>
+      <input type="text" name="processing_text" placeholder="Downloading Virus...">
+    </div>
+    <div class="field">
+      <label>Increment Delay (in milliseconds) - This determines how often we increment the progress</label>
+      <input type="text" name="step_delay" placeholder="1000" value="1000">
+    </div>
+    <button class="ui button" type="submit">Show</button>
+  </form>
+</div>

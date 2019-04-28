@@ -1,8 +1,13 @@
-<div class="ui inverted vertical center aligned"
-      style="min-height: 700px">
-<%= react_component("effects/Processing", {
-  processingText: processing_text,
-  startPosition: start_position,
-  stepDelay: step_delay
-}) %>
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui text container">
+      <h1 class="ui inverted header"><%= start_text %></h1>
+      <%= react_component("effects/Processing", {
+        processingText: processing_text,
+        startButtonLabel: start_button_label,
+        startPosition: start_position,
+        stepDelay: step_delay
+      }) %>
+    </div>
+  </div>
 </div>

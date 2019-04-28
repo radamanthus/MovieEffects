@@ -9,6 +9,7 @@ class Processing extends React.Component {
       maxProgress: props.maxProgress,
       processingText: props.processingText,
       progress: props.startPosition,
+      startButtonLabel: props.startButtonLabel,
       stepDelay: props.stepDelay,
       timerStarted: false
     }
@@ -42,7 +43,7 @@ class Processing extends React.Component {
     return (
       <React.Fragment>
         <Container>
-          <Modal trigger={<Button onClick={this.startTimer.bind(this)}>Start</Button>}>
+          <Modal trigger={<Button onClick={this.startTimer.bind(this)}>{this.state.startButtonLabel}</Button>}>
             <Segment inverted>
               <Progress percent = {this.state.progress} progress inverted color='blue'>
                 <Header inverted size='medium'>{this.state.processingText}</Header>
