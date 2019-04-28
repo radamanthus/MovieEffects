@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Container, Progress, Segment } from 'semantic-ui-react'
+import { Button, Container, Header, Modal, Progress, Segment } from 'semantic-ui-react'
 
 class Processing extends React.Component {
   constructor(props) {
@@ -9,7 +9,8 @@ class Processing extends React.Component {
       maxProgress: props.maxProgress,
       processingText: props.processingText,
       progress: props.startPosition,
-      stepDelay: props.stepDelay
+      stepDelay: props.stepDelay,
+      timerStarted: false
     }
   }
 
@@ -21,7 +22,14 @@ class Processing extends React.Component {
     clearInterval(this.interval);
   }
 
+  startTimer() {
+    this.setState({ timerStarted: true });
+  }
+
   updateProgress() {
+    if (!this.state.timerStarted) {
+      return;
+    }
     if (this.state.progress >= this.state.maxProgress) {
       return;
     }
@@ -33,11 +41,15 @@ class Processing extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <Segment inverted>
-          <Progress percent = {this.state.progress} inverted progress color='blue'>
-            <p>{this.state.processingText}</p>
-          </Progress>
-        </Segment>
+        <Container>
+          <Modal trigger={<Button onClick={this.startTimer.bind(this)}>Start</Button>}>
+            <Segment inverted>
+              <Progress percent = {this.state.progress} progress inverted color='blue'>
+                <Header inverted size='medium'>{this.state.processingText}</Header>
+              </Progress>
+            </Segment>
+          </Modal>
+        </Container>
       </React.Fragment>
     );
   }

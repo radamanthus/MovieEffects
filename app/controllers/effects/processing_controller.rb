@@ -1,5 +1,6 @@
 class Effects::ProcessingController < ApplicationController
   def index
+    @bgcolor = '#1b1c1d'
     start_position = params[:start_position].to_i || 0
     step_delay = params[:step_delay].to_i || 100
     processing_text = params[:processing_text] || 'Processing...'
