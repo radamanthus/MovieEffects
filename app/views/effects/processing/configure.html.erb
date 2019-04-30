@@ -1,21 +1,51 @@
 <div class="ui container">
+<h1 class="ui header">I hear you like watching progress bars</h1>
+<h2 class="ui header">...so I made you a progress bar generator!</h2>
+  <div class="ui segment">
   <form class="ui form" action="/effects/processing" method="get">
-    <div class="field">
-      <label>Start Text</label>
-      <input type="text" name="start_text" placeholder="Are you sure you want to download the virus?">
-    </div>
+    <h3 class="ui header">Configure your prompt window</h3>
+    <p>The prompt window is the window that appears before the progress bar is shown.
+    You can configure both the prompt text and the start button label.
     <div class="field">
       <label>Start Button Label</label>
-      <input type="text" name="start_button_label" placeholder="Proceed">
+      <input type="text" name="start_button_label" value="Proceed">
+      <p>You click the Start button to start the progress bar. This setting lets you change the button label.</p>
     </div>
+    <br/>
+    <div class="field">
+      <label>Prompt Text</label>
+      <input type="text" name="start_text" value="Are you sure you want to download the virus?">
+      <p>This is the label on top of the Start button. Put scary-sounding tecxt here, like <i>"Are you sure you want to launch the nuke?"</i></p>
+    </div>
+
+    <br/>
+
+    <h3 class="ui header">Configure your progress bar window</h3>
     <div class="field">
       <label>Processing Text</label>
-      <input type="text" name="processing_text" placeholder="Downloading Virus...">
+      <input type="text" name="processing_text" value="Downloading Virus...">
+      <p>This is the text on top of the progress bar</p>
     </div>
+    <br/>
     <div class="field">
-      <label>Increment Delay (in milliseconds) - This determines how often we increment the progress</label>
-      <input type="text" name="step_delay" placeholder="1000" value="1000">
+      <label>Increment Delay (in milliseconds)</label>
+      <input type="text" name="step_delay" value="1000">
+      <p>This determines how often we increment the progress. The clock "tick" of the progress bar.</p>
     </div>
-    <button class="ui button" type="submit">Show</button>
+    <br/>
+    <div class="field">
+      <label>Increment (in percentage)</label>
+      <input type="text" name="step_increment" value="1">
+      <p>This determines how big or how small is the jump in the progress for each "tick"</p>
+    </div>
+    <br/>
+    <div class="field">
+      <label>Progress bar color</label>
+      <input type="text" name="progress_bar_color" value="blue">
+      <p>You can use HTML colors here, like <i>red</i>, or <i>#1c1d1e</i>.</p>
+    </div>
+    <button class="ui button" type="submit">Show It!</button>
+    <i>Use your browser's back button to go back to this configuration page</i>
   </form>
+  </div>
 </div>

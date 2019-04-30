@@ -9,8 +9,10 @@ class Processing extends React.Component {
       maxProgress: props.maxProgress,
       processingText: props.processingText,
       progress: props.startPosition,
+      progressBarColor: props.progressBarColor,
       startButtonLabel: props.startButtonLabel,
       stepDelay: props.stepDelay,
+      stepIncrement: props.stepIncrement,
       timerStarted: false
     }
   }
@@ -35,7 +37,7 @@ class Processing extends React.Component {
       return;
     }
 
-    var new_progress = this.state.progress + 1;
+    var new_progress = this.state.progress + this.state.stepIncrement;
     this.setState({ progress: new_progress });
   }
 
@@ -45,7 +47,7 @@ class Processing extends React.Component {
         <Container>
           <Modal trigger={<Button onClick={this.startTimer.bind(this)}>{this.state.startButtonLabel}</Button>}>
             <Segment inverted>
-              <Progress percent = {this.state.progress} progress inverted color='blue'>
+              <Progress percent = {this.state.progress} progress inverted color={this.state.progressBarColor}>
                 <Header inverted size='medium'>{this.state.processingText}</Header>
               </Progress>
             </Segment>

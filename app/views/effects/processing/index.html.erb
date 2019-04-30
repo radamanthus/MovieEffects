@@ -4,9 +4,11 @@
       <h1 class="ui inverted header"><%= start_text %></h1>
       <%= react_component("effects/Processing", {
         processingText: processing_text,
+        progressBarColor: progress_bar_color,
         startButtonLabel: start_button_label,
         startPosition: start_position,
-        stepDelay: step_delay
+        stepDelay: step_delay,
+        stepIncrement: step_increment
       }) %>
     </div>
   </div>
