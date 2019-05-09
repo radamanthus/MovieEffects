@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a tool for showing some of the most common computer effects seen in movies.
 
-Things you may want to cover:
+- [A progress bar animation ("Downloading virus...")](http://movie-effects.herokuapp.com/effects/processing/configure)
+- A login screen
+- A fake search engine
 
-* Ruby version
+Currently only  the prgoress bar animation has been built, all the others are WIP.
 
-* System dependencies
+This is deployed in http://movie-effects.herokuapp.com/
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
