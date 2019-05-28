@@ -5,5 +5,9 @@ Rails.application.routes.draw do
     resources :processing do
       get 'configure', on: :collection
     end
+
+    resources :access do
+      get 'configure', on: :collection
+    end
   end
 end
