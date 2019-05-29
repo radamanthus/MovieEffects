@@ -18,7 +18,22 @@ class Access extends React.Component {
       maxRetries: props.maxRetries,
       successRedirectUrl: props.successRedirectUrl,
       failureRedirectUrl: props.failureRedirectUrl,
-      redirectDelay: props.redirectDelay
+      redirectDelay: props.redirectDelay,
+      userNameInput: '',
+      passwordInput: '',
+      loginResult: ''
+    }
+  }
+
+  handleFormInputChange(e, {name, value}) {
+    this.setState({ [name]: value} );
+  }
+
+  handleLogin() {
+    if (this.state.passwordInput == this.state.correctPassword) {
+      this.setState({loginResult: this.state.accessGrantedText});
+    } else {
+      this.setState({loginResult: this.state.accessDeniedText});
     }
   }
 
@@ -29,16 +44,30 @@ class Access extends React.Component {
           <Grid.Column style={{ maxWidth: 450 }}>
             <Header as='h2' color='teal' textAlign='center'>{this.state.headerText}</Header>
             <Segment inverted>
-              <Form>
+              <Form onSubmit={this.handleLogin.bind(this)}>
                 <Header inverted>{this.state.usernameLabel}</Header>
                 <Form.Field inverted>
-                  <input placeholder={this.state.usernamePlaceholder}></input>
+                  <Form.Input 
+                    placeholder={this.state.usernamePlaceholder} 
+                    name='userNameInput'
+                    onChange={this.handleFormInputChange.bind(this)}
+                  />
                 </Form.Field>
                 <Header inverted>{this.state.passwordLabel}</Header>
                 <Form.Field inverted>
-                  <input placeholder={this.state.usernamePlaceholder}></input>
+                  <Form.Input
+                    type='password'
+                    name='passwordInput'
+                    onChange={this.handleFormInputChange.bind(this)}
+                  />
                 </Form.Field>
-                <Button>{this.state.loginButtonLabel}</Button>
+                <Modal trigger={<Button>{this.state.loginButtonLabel}</Button>}>
+                  <Segment inverted>
+                    <Header inverted textAlign='center' size='medium'>
+                      {this.state.loginResult}
+                    </Header>
+                  </Segment>
+                </Modal>
               </Form>
             </Segment>
           </Grid.Column>
