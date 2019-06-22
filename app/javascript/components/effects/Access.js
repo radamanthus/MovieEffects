@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Button, Container, Form, Grid, Header, Input, Label, Modal, Segment } from 'semantic-ui-react'
+import { Button, Container, Form, Grid, Header, Icon, Input, Label, Modal, Segment } from 'semantic-ui-react'
 
 class Access extends React.Component {
   constructor(props) {
@@ -21,7 +21,8 @@ class Access extends React.Component {
       redirectDelay: props.redirectDelay,
       userNameInput: '',
       passwordInput: '',
-      loginResult: ''
+      loginResultText: '',
+      loginResultIcon: ''
     }
   }
 
@@ -31,9 +32,17 @@ class Access extends React.Component {
 
   handleLogin() {
     if (this.state.passwordInput == this.state.correctPassword) {
-      this.setState({loginResult: this.state.accessGrantedText});
+      this.setState({
+        loginResultText: this.state.accessGrantedText,
+        loginResultIcon: 'check circle',
+        loginResultIconColor: 'green'
+      });
     } else {
-      this.setState({loginResult: this.state.accessDeniedText});
+      this.setState({
+        loginResultText: this.state.accessDeniedText,
+        loginResultIcon: 'ban',
+        loginResultIconColor: 'red'
+      });
     }
   }
 
@@ -62,9 +71,12 @@ class Access extends React.Component {
                   />
                 </Form.Field>
                 <Modal trigger={<Button>{this.state.loginButtonLabel}</Button>}>
-                  <Segment inverted>
-                    <Header inverted textAlign='center' size='medium'>
-                      {this.state.loginResult}
+                  <Segment inverted placeholder>
+                    <Header inverted icon as='h1' textAlign='center'>
+                      <Icon size='massive'
+                            name={this.state.loginResultIcon} 
+                            color={this.state.loginResultIconColor} />
+                      <Header.Content>{this.state.loginResultText}</Header.Content>
                     </Header>
                   </Segment>
                 </Modal>
