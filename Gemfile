@@ -65,3 +65,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker'
 gem 'react-rails'
 
+# For generating slugs
+gem 'hashids', '1.0.5'
+
+# Load application settings from YAML files
+gem 'config', '2.0.0'
