@@ -4,6 +4,7 @@ class CreateSavedConfigurations < ActiveRecord::Migration[5.2]
       t.string      :effect, null: false
       t.string      :slug
       t.string      :hashed_password
+      t.string      :session_id, null: false
       t.jsonb       :configuration, null: false, default: '{}'
       t.timestamps
     end

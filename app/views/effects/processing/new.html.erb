@@ -1,0 +1,9 @@
+<div class="ui container">
+<h1 class="ui header">I hear you like watching progress bars</h1>
+<h2 class="ui header">...so I made you a progress bar generator!</h2>
+  <div class="ui segment">
+  <%= form_tag('/effects/processing', method: 'post', class: 'ui form') do %>
+    <%= render partial:'form', locals:{config: config} %>
+  <% end %>
+  </div>
+</div>

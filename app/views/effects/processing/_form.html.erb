@@ -1,0 +1,42 @@
+<h3 class="ui header">Configure your prompt window</h3>
+<p>The prompt window is the window that appears before the progress bar is shown.
+You can configure both the prompt text and the start button label.
+<div class="field">
+  <label>Start Button Label</label>
+  <%= text_field_tag('start_button_label', config[:start_button_label]) %>
+  <p>You click the Start button to start the progress bar. This setting lets you change the button label.</p>
+</div>
+<br/>
+<div class="field">
+  <label>Prompt Text</label>
+  <%= text_field_tag('start_text', config[:start_text]) %>
+  <p>This is the label on top of the Start button. Put scary-sounding text here, like <i>"Are you sure you want to launch the nuke?"</i></p>
+</div>
+
+<br/>
+
+<h3 class="ui header">Configure your progress bar window</h3>
+<div class="field">
+  <label>Processing Text</label>
+  <%= text_field_tag('processing_text', config[:processing_text]) %>
+  <p>This is the text on top of the progress bar</p>
+</div>
+<br/>
+<div class="field">
+  <label>Increment Delay (in milliseconds)</label>
+  <%= text_field_tag('step_delay', config[:step_delay]) %>
+  <p>This determines how often we increment the progress. The clock "tick" of the progress bar.</p>
+</div>
+<br/>
+<div class="field">
+  <label>Increment (in percentage)</label>
+  <%= text_field_tag('step_increment', config[:step_increment]) %>
+  <p>This determines how big or how small is the jump in the progress for each "tick"</p>
+</div>
+<br/>
+<div class="field">
+  <label>Progress bar color</label>
+  <%= text_field_tag('progress_bar_color', config[:progress_bar_color]) %>
+  <p>You can use HTML colors here, like <i>red</i>, or <i>#1c1d1e</i>.</p>
+</div>
+<button class="ui button" type="submit">Save</button>

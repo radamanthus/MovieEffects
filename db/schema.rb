@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_07_27_042057) do
     t.string "effect", null: false
     t.string "slug"
     t.string "hashed_password"
+    t.string "session_id", null: false
     t.jsonb "configuration", default: "{}", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
