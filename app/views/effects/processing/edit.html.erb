@@ -11,5 +11,6 @@
     <%= form_tag("/effects/processing/#{id}", method: 'patch', class: 'ui form') do %>
       <%= render partial:'form', locals:{config: config} %>
     <% end %>
+    <button class="ui button" type="submit">Save and Show</button>
   </div>
 </div>
