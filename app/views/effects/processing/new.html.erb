@@ -4,7 +4,7 @@
   <div class="ui segment">
   <%= form_tag('/effects/processing', method: 'post', class: 'ui form') do %>
     <%= render partial:'form', locals:{config: config} %>
+    <button class="ui button" type="submit">Save</button>
   <% end %>
-  <button class="ui button" type="submit">Save</button>
   </div>
 </div>

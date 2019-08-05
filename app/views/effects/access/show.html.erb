@@ -1,0 +1,21 @@
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui text container">
+      <%= react_component("effects/Access", {
+        headerText: config[:header_text],
+        mode: config[:mode],
+        usernameLabel: config[:username_label],
+        passwordLabel: config[:password_label],
+        usernamePlaceholder: config[:username_placeholder],
+        loginButtonLabel: config[:login_button_label],
+        accessDeniedText: config[:access_denied_text],
+        accessGrantedText: config[:access_granted_text],
+        correctPassword: config[:correct_password],
+        maxRetries: config[:max_retries],
+        successRedirectUrl: config[:success_redirect_url],
+        failureRedirectUrl: config[:failure_redirect_url],
+        redirectDelay: config[:redirect_delay]
+      }) %>
+    </div>
+  </div>
+</div>

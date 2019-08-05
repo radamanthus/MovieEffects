@@ -1,14 +1,14 @@
 <div class="pusher">
   <div class="ui inverted vertical masthead center aligned segment">
     <div class="ui text container">
-      <h1 class="ui inverted header"><%= start_text %></h1>
+      <h1 class="ui inverted header"><%= config[:start_text] %></h1>
       <%= react_component("effects/Processing", {
-        processingText: processing_text,
-        progressBarColor: progress_bar_color,
-        startButtonLabel: start_button_label,
-        startPosition: start_position,
-        stepDelay: step_delay,
-        stepIncrement: step_increment
+        processingText: config[:processing_text],
+        progressBarColor: config[:progress_bar_color],
+        startButtonLabel: config[:start_button_label],
+        startPosition: config[:start_position],
+        stepDelay: config[:step_delay],
+        stepIncrement: config[:step_increment]
       }) %>
     </div>
   </div>

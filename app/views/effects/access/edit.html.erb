@@ -8,7 +8,7 @@
 
   <h2>You can further tweak your FX below</h2>
   <div class="ui segment">
-    <%= form_tag("/effects/processing/#{id}", method: 'patch', class: 'ui form') do %>
+    <%= form_tag("/effects/access/#{id}", method: 'patch', class: 'ui form') do %>
       <%= render partial:'form', locals:{config: config} %>
       <button class="ui button" type="submit">Save and Show</button>
     <% end %>

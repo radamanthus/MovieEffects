@@ -1,0 +1,9 @@
+<div class="ui container">
+<h1 class="ui header">Login Screen Simulator</h1>
+  <div class="ui segment">
+  <%= form_tag('/effects/access', method: 'post', class: 'ui form') do %>
+    <%= render partial:'form', locals:{config: config} %>
+    <button class="ui button" type="submit">Save</button>
+  <% end %>
+  </div>
+</div>
