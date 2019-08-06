@@ -9,13 +9,13 @@ private
 
   def configuration_from_params_and_defaults
     {
-      processing_text: sanitize(params[:processing_text]) || DEFAULT_CONFIG[:processing_text],
-      progress_bar_color: sanitize(params[:progress_bar_color]) || DEFAULT_CONFIG[:progress_bar_color],
-      start_position: sanitize(params[:start_position]).to_i || DEFAULT_CONFIG[:start_position],
-      start_button_label: sanitize(params[:start_button_label]) || DEFAULT_CONFIG[:start_button_label],
-      start_text: sanitize(params[:start_text]) || DEFAULT_CONFIG[:start_text],
-      step_delay: sanitize(params[:step_delay]).to_i || DEFAULT_CONFIG[:step_delay],
-      step_increment: sanitize(params[:step_increment]).to_i || DEFAULT_CONFIG[:step_increment]
+      processing_text: sanitize(params[:processing_text]) || default_config[:processing_text],
+      progress_bar_color: sanitize(params[:progress_bar_color]) || default_config[:progress_bar_color],
+      start_position: sanitize(params[:start_position]).to_i || default_config[:start_position],
+      start_button_label: sanitize(params[:start_button_label]) || default_config[:start_button_label],
+      start_text: sanitize(params[:start_text]) || default_config[:start_text],
+      step_delay: sanitize(params[:step_delay]).to_i || default_config[:step_delay],
+      step_increment: sanitize(params[:step_increment]).to_i || default_config[:step_increment]
     }
   end
 

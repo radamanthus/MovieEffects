@@ -12,17 +12,17 @@ private
     {
       header_text: sanitize(params[:header_text]),
       mode: sanitize(params[:mode]),
-      username_label: sanitize(params[:username_label]) || DEFAULT_CONFIG[:username_label],
-      password_label: sanitize(params[:password_label]) || DEFAULT_CONFIG[:password_label],
-      username_placeholder: sanitize(params[:username_placeholder]) || DEFAULT_CONFIG[:username_placeholder],
-      login_button_label: sanitize(params[:login_button_label]) || DEFAULT_CONFIG[:login_button_label],
-      access_denied_text: sanitize(params[:access_denied_text]) || DEFAULT_CONFIG[:access_denied_text],
-      access_granted_text: sanitize(params[:access_granted_text]) || DEFAULT_CONFIG[:access_granted_text],
-      correct_password: sanitize(params[:correct_password]) || DEFAULT_CONFIG[:correct_password],
-      max_retries: params[:max_retries].to_i || DEFAULT_CONFIG[:max_retries],
-      redirect_delay: params[:redirect_delay].to_i || DEFAULT_CONFIG[:redirect_delay],
-      success_redirect_url: params[:success_redirect_url] || DEFAULT_CONFIG[:success_redirect_url],
-      failure_redirect_url: params[:failure_redirect_url] || DEFAULT_CONFIG[:failure_redirect_url]
+      username_label: sanitize(params[:username_label]) || default_config[:username_label],
+      password_label: sanitize(params[:password_label]) || default_config[:password_label],
+      username_placeholder: sanitize(params[:username_placeholder]) || default_config[:username_placeholder],
+      login_button_label: sanitize(params[:login_button_label]) || default_config[:login_button_label],
+      access_denied_text: sanitize(params[:access_denied_text]) || default_config[:access_denied_text],
+      access_granted_text: sanitize(params[:access_granted_text]) || default_config[:access_granted_text],
+      correct_password: sanitize(params[:correct_password]) || default_config[:correct_password],
+      max_retries: params[:max_retries].to_i || default_config[:max_retries],
+      redirect_delay: params[:redirect_delay].to_i || default_config[:redirect_delay],
+      success_redirect_url: params[:success_redirect_url] || default_config[:success_redirect_url],
+      failure_redirect_url: params[:failure_redirect_url] || default_config[:failure_redirect_url]
     }
   end
 
