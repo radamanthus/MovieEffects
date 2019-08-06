@@ -1,10 +1,10 @@
 <div class="ui container">
-<h1 class="ui header">Your progress bar has been saved to the AwesomeFX Library</h1>
-  <div class="ui segment">
-    <h3>Take note of these links</h3>
-    <p><%= link_to("Permalink", permalink) %></p>
-    <p><%= link_to("Edit link", edit_url) %></p>
-  </div>
+  <%= render partial:'shared/save_confirmation', 
+    locals: { 
+      permalink: permalink, 
+      edit_url: edit_url
+    } 
+  %>
 
   <h2>You can further tweak your FX below</h2>
   <div class="ui segment">
