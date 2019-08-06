@@ -75,6 +75,3 @@ gem 'hashids', '1.0.5'
 
 # Load application settings from YAML files
 gem 'config', '2.0.0'
-
-# For Heroku
-gem 'rails_12factor', group: :production
